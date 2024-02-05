@@ -1,27 +1,32 @@
 pipeline {
     agent any
 
-    
     stages {
         stage('Git Checkout') {
             steps {
                 // Checkout code from Github repository
-               git branch: 'main', url: 'https://github.com/preet0807/DevOps.git'
+                script {
+                    git branch: 'main', url: 'https://github.com/nupursharma26/DevOps-Pipeline-Project.git'
+                }
             }
         }
-        stage ('UNIT testing'){
-            steps{
-                bat '/C:/Program Files/apache-maven-3.9.1-bin/apache-maven-3.9.1/mvn verify -DskipUnitTests'
+        stage('UNIT Testing') {
+            steps {
+                // Run unit tests using Maven
+                script {
+                    sh '/path/to/maven/bin/mvn verify'
+                }
             }
-        
         }
-        stage('Maven Build'){
-            steps{
-                bat '/C:/Program Files/apache-maven-3.9.1-bin/apache-maven-3.9.1/mvn clean install '
+        stage('Maven Build') {
+            steps {
+                // Run Maven clean install
+                script {
+                    sh '/path/to/maven/bin/mvn clean install'
+                }
             }
         }
     }
 }
-
 
         
