@@ -1,11 +1,16 @@
 pipeline {
     agent any
 
+    environment {
+        // Reference the GitHub credentials by ID
+        GITHUB_CREDENTIALS = credentials('gitcred')
+    }
+
     stages {
         stage('Git Checkout') {
             steps {
                 // Checkout code from GitHub repository
-                git branch: 'main', url: 'https://github.com/nupursharma26/DevOps-Pipeline-Project.git'
+                git branch: 'main', credentials: gitcred, url: 'https://github.com/nupursharma26/DevOps-Pipeline-Project.git'
             }
         }
         stage('UNIT Testing') {
