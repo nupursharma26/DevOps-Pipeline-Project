@@ -10,7 +10,7 @@ pipeline {
         stage('Git Checkout') {
             steps {
                 // Checkout code from GitHub repository
-                git branch: 'main', credentials: gitcred, url: 'https://github.com/nupursharma26/DevOps-Pipeline-Project.git'
+                git branch: 'main', credentialsID: gitcred, url: 'https://github.com/nupursharma26/DevOps-Pipeline-Project.git'
             }
         }
         stage('UNIT Testing') {
