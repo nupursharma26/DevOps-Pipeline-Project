@@ -1,0 +1,6 @@
+- name: Deploy Application
+  hosts: your_target_hosts
+  tasks:
+    - name: Print a Message
+      debug:
+        msg: "Hello from Ansible in Jenkins!"
