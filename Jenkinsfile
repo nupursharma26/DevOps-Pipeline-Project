@@ -28,14 +28,14 @@ pipeline {
 
          stage('SonarQube Analysis') {
             environment {
-                SCANNER_HOME = tool 'Sonarserver'
+                SCANNER_HOME = tool name: 'Sonarserver', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
             }
             steps {
                 script {
-                    def scannerHome = tool 'Sonarserver'
-                    withEnv(["PATH+SCANNER=${scannerHome}\\bin"]) {
+                    def scannerHome = tool name: 'Sonarserver', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+                    withEnv(["PATH+SCANNER=${scannerHome}/bin"]) {
                         sh """
-                        sonar-scanner \
+                        ${scannerHome}/bin/sonar-scanner \
                         -Dsonar.projectKey=admin \
                         -Dsonar.sources=. \
                         -Dsonar.host.url=http://192.168.1.6:9000/ \
