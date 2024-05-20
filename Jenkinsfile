@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         // Reference the GitHub credentials by ID
-        GITHUB_CREDENTIALS = credentials('gitcred') // Line 4
+        GITHUB_CREDENTIALS = credentials('pipeline') // Line 4
     }
 
     stages {
