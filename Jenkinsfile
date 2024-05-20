@@ -25,5 +25,11 @@ pipeline {
                 sh '"/opt/homebrew/bin/mvn" clean install' // Line 22
             }
         }
+        stage('Deploy with Ansible') {
+            steps {
+                // Execute Ansible playbook
+                sh 'ansible-playbook -i inventory playbook.yml'
+            }
+        }
     }
 }
