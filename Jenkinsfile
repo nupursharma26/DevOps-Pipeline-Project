@@ -25,6 +25,8 @@ pipeline {
                 sh '"/opt/homebrew/bin/mvn" clean install' // Line 22
             }
         }
+
+        
         stage('SonarQube') {
             environment {
                 SCANNER_HOME = tool 'SonarQube_Scanner'
@@ -42,5 +44,18 @@ pipeline {
                 }
             }
         }
+        stage('SonarQube Analysis') {
+            environment {
+                SONAR_HOST_URL = 'http://localhost:9000'  // Default SonarQube URL
+            }
+            steps {
+                withSonarQubeEnv('SonarQube') {  // 'SonarQube' should match the name of your SonarQube server configuration in Jenkins
+                    sh '/opt/homebrew/bin/sonarqube sonar:sonar -Dsonar.projectKey=sqp_d34e025d6bc8e3285d1c27f8218f0a55fb8621e8 -Dsonar.host.url=http://192.168.1.6:9000/  -Dsonar.login=admin'
+                }
+            }
+        }
+        
+
+        
     }
 }
