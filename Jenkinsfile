@@ -34,7 +34,7 @@ pipeline {
                 script {
                     def scannerHome = tool 'Sonarserver'
                     withEnv(["PATH+SCANNER=${scannerHome}\\bin"]) {
-                        bat 'sonar-scanner.bat \
+                        sh 'sonar-scanner.bat \
                              -Dsonar.projectKey=admin \
                              -Dsonar.sources=. \
                              -Dsonar.host.url=http://192.168.1.6:9000/ \
