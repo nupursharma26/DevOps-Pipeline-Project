@@ -26,18 +26,6 @@ pipeline {
             }
         }
 
-        
-        stage('SonarQube Analysis') {
-            environment {
-                SONAR_HOST_URL = 'http://localhost:9000'  // Default SonarQube URL
-            }
-            steps {
-                withSonarQubeEnv('Sonarserver') {  // 'SonarQube' should match the name of your SonarQube server configuration in Jenkins
-                    sh '/opt/homebrew/bin/sonarqube sonar:sonar -Dsonar.projectKey= -Dsonar.host.url=http://192.168.1.6:9000/  -Dsonar.login=admin'
-                }
-            }
-        }
-
          stage('SonarQube Analysis') {
             environment {
                 SCANNER_HOME = tool 'Sonarserver'
@@ -55,8 +43,6 @@ pipeline {
                 }
             }
         }
-        
-
-        
+           
     }
 }
