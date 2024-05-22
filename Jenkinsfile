@@ -54,7 +54,12 @@ pipeline {
             classifier: '',
             file: 'target/demo-1.0-SNAPSHOT.jar',
             type: 'jar'
-        ]], credentialsId: 'nexus-credentials', groupId: 'com.example', nexusUrl: 'http://localhost:8081', nexusVersion: 'nexus3', repository: 'maven-releases', version: '1.0-SNAPSHOT'
+        ]], credentialsId: 'nexus-credentials', 
+            groupId: 'com.example', 
+            nexusUrl: 'http://localhost:8081', 
+            nexusVersion: 'nexus3', 
+            repository: 'maven-releases', 
+            version: '1.0-SNAPSHOT'
     }
 }
 
