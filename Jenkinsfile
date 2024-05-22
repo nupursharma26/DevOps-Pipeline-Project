@@ -48,7 +48,7 @@ pipeline {
         }
 
         stage('Nexus Deployment') {
-    steps {
+            steps {
         nexusArtifactUploader artifacts: [[
             artifactId: 'demo',
             classifier: '',
@@ -60,10 +60,8 @@ pipeline {
             nexusVersion: 'nexus3', 
             repository: 'maven-releases', 
             version: '1.0-SNAPSHOT'
-    }
-}
-
+                  }
+        }
         
-           
     }
 }
