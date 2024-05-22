@@ -4,6 +4,7 @@ pipeline {
     environment {
         // Reference the GitHub credentials by ID
         GITHUB_CREDENTIALS = credentials('pipeline') // Line 4
+        NEXUS_CREDENTIALS = credentials('nexus-credentials')
     }
 
     stages {
