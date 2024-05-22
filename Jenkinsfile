@@ -60,7 +60,7 @@ pipeline {
             nexusVersion: 'nexus3', 
             repository: 'maven-releases', 
             version: '1.0-SNAPSHOT'
-                  }
+           }
         }
         
     }
