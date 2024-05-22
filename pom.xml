@@ -20,8 +20,8 @@
 
   <distributionManagement>
     <repository>
-      <id>maven-releases</id>   //changes
-      <url>http://localhost:8081/repository/maven-releases/</url>
+      <id>maven-releases</id>   <!-- changes -->
+        <url>http://localhost:8081/repository/maven-releases/</url>
     </repository>
     <snapshotRepository>
       <id>maven-snapshots</id>
