@@ -56,7 +56,7 @@ pipeline {
             type: 'jar'
         ]], credentialsId: 'nexus-credentials', 
             groupId: 'com.example', 
-            nexusUrl: '://localhost:8081', 
+            nexusUrl: 'localhost:8081', 
             protocol: 'http',
             nexusVersion: 'nexus3', 
             repository: 'maven-releases', 
