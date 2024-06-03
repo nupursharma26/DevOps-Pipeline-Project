@@ -39,7 +39,7 @@ pipeline {
                         ${scannerHome}/bin/sonar-scanner \
                         -Dsonar.projectKey=admin \
                         -Dsonar.sources=. \
-                        -Dsonar.host.url=http://192.168.1.6:9000/ \
+                        -Dsonar.host.url=http://192.168.1.2:9000/ \
                         -Dsonar.login=sqp_d34e025d6bc8e3285d1c27f8218f0a55fb8621e8
                         """
                     }
